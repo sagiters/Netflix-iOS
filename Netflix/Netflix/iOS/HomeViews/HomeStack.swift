@@ -25,14 +25,14 @@ struct HomeStack: View {
                         .bold()
                     Spacer()
                 }
+                .padding(.leading, 6)
 
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack {
                         ForEach(vm.getMovie(forCat: category, andHomeRow: topRowSelection, andGenre: selectedGenre)) { movie in
                             StandardHomeMovie(movie: movie)
-                                .frame(width: 100
+                                .frame(width: 135
                                        , height: 200)
-                                .padding(.horizontal, 20)
                                 .onTapGesture {
                                     movieDetailToShow = movie
                                 }
@@ -40,6 +40,7 @@ struct HomeStack: View {
                     }
                 }
             }
+            .padding(.leading, 6)
         }
     }
 }
